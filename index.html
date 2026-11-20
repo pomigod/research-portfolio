@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jin Hwang (황진) — AI &amp; Research Portfolio</title>
+  <meta name="description" content="Academic and engineering research portfolio of Jin Hwang (Konyang University, Department of Artificial Intelligence): Multimodal Medical AI, Geospatial GSI, Swin Dermatology, XGBoost Forecasting, AWS DeepRacer, and Declarative AI Video Pipelines." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --accent: #1d4ed8;
+      --orcid: #65a30d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 24px 72px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+    }
+    .kicker {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2.1rem;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 1.03rem;
+      color: var(--muted);
+      max-width: 820px;
+      margin: 0 0 18px;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      background: var(--surface);
+      color: var(--ink);
+    }
+    .pill strong { color: var(--orcid); }
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+    .metric-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px 18px;
+      background: var(--bg);
+    }
+    .metric-val {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    section { margin-bottom: 48px; }
+    h2 {
+      font-size: 1.38rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      margin: 0 0 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+    }
+    .card-thumb {
+      width: 100%;
+      height: 215px;
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+    .card-thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .card-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .tag {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.08rem;
+      line-height: 1.38;
+    }
+    .ko-title {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.92rem;
+      color: #334155;
+      margin: 0 0 14px;
+      flex: 1;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      font-size: 0.85rem;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      color: var(--ink);
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="kicker">Konyang University · Department of Artificial Intelligence (Minor: Medical IT Engineering)</div>
+      <h1>Jin Hwang (황진) — Research &amp; Engineering Portfolio</h1>
+      <p class="subtitle">
+        Undergraduate researcher focusing on clinical medical computer vision under occlusion, satellite geospatial grid screening,
+        time-series demand forecasting, reinforcement learning, and declarative generative media pipelines.
+      </p>
+      <div class="pill-row">
+        <a class="pill" href="https://orcid.org/0009-0007-4269-0168" target="_blank" rel="noopener"><strong>ORCID</strong> 0009-0007-4269-0168</a>
+        <a class="pill" href="https://github.com/pomigod/research-portfolio" target="_blank" rel="noopener">GitHub Repository</a>
+        <a class="pill" href="https://github.com/pomigod/gogod" target="_blank" rel="noopener">AWS DeepRacer (pomigod/gogod)</a>
+        <a class="pill" href="https://www.youtube.com/@extendedseamless" target="_blank" rel="noopener">YouTube (@extendedseamless)</a>
+        <a class="pill" href="https://programmingtrainingkyu.blogspot.com/2025/06/swin-transformer.html" target="_blank" rel="noopener">Swin Research Blog</a>
+        <a class="pill" href="mailto:hwangjin213@gmail.com">hwangjin213@gmail.com</a>
+      </div>
+    </header>
+
+    <div class="metrics-bar">
+      <div class="metric-box">
+        <div class="metric-val">2023-03 – Present</div>
+        <div class="metric-label">Konyang Univ. B.S. AI Candidate &amp; Clinical Medical AI Track</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">PCKh 0.518 / MPJPE 0.191</div>
+        <div class="metric-label">YOLO26s-Pose + 4-Layer GCN under Blanket Occlusion</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">2026-08 · 2025-09</div>
+        <div class="metric-label">NAVER Cloud Agentic AI Award · AWS DeepRacer Finalist</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">7 Curated Archives</div>
+        <div class="metric-label">Sanitized PDFs, PyTorch Weights, GEE Notebook &amp; Draw.io XMLs</div>
+      </div>
+    </div>
+
+    <section id="projects">
+      <h2>Research Works, Systems &amp; Technical Archives</h2>
+      <div class="grid">
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="./01_medical_ai_capstone_bed_is_ai/multimodal_pressure_ulcer_architecture.png" alt="Multimodal Bedsore Risk Prediction Architecture" />
+          </div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span class="tag">Medical AI</span>
+              <span class="tag">YOLO26s-Pose + GCN</span>
+              <span class="tag">SLP Benchmark</span>
+            </div>
+            <h3>01. Bed is AI: Multimodal Patient Posture &amp; Pressure-Ulcer Prevention</h3>
+            <div class="ko-title">침대는 AI다 — 환자 자세 변화 감지와 압력 센서 기반 욕창 예방 AI</div>
+            <p>
+              Fuses top-down RGB pose estimation with an Arduino pressure-sensor matrix to monitor bedridden patients under heavy blankets.
+              Adding pseudo-depth preprocessing and a 4-layer GCN (<code>best_gcn.pt</code>, val_loss <code>0.08098</code>) improved SLP PCKh@0.5 from <code>0.487</code> to <code>0.518</code> and reduced MPJPE from <code>0.210</code> to <code>0.191</code> at <code>49.31 FPS</code>.
+            </p>
+            <div class="links">
+              <a href="./01_medical_ai_capstone_bed_is_ai/week5_yolo_gcn_report.pdf">Week 5 Report (PDF)</a>
+              <a href="./01_medical_ai_capstone_bed_is_ai/week4_eda_preprocessing_report.pdf">Week 4 EDA (PDF)</a>
+              <a href="./01_medical_ai_capstone_bed_is_ai/week3_presentation.pdf">Week 3 Deck</a>
+              <a href="./01_medical_ai_capstone_bed_is_ai/week3_team_report.pdf">Week 3 Report</a>
+              <a href="https://github.com/pomigod/research-portfolio/tree/main/01_medical_ai_capstone_bed_is_ai" target="_blank" rel="noopener">All Files &amp; Weights (best_gcn.pt)</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="./02_geospatial_ai_datacenter_gsi/regional_micro_siting_cluster_map.png" alt="Data Center Grid Suitability Micro-Siting Map" />
+          </div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span class="tag">Geospatial AI</span>
+              <span class="tag">Google Earth Engine</span>
+              <span class="tag">2026-01-16</span>
+            </div>
+            <h3>02. Satellite-Driven Data Center Siting via Grid Suitability Index (GSI)</h3>
+            <div class="ko-title">위성 데이터 기반 데이터센터 최적 입지 선정 (AI Infrastructure Hackathon, Team INFRA)</div>
+            <p>
+              Combines VIIRS night-time radiance, Landsat 8 surface temperature, ESA WorldCover, terrain slope, plant proximity, and OSMnx transmission corridors in a multi-criteria Grid Suitability Index across Haenam and Gangwon screening zones.
+            </p>
+            <div class="links">
+              <a href="./02_geospatial_ai_datacenter_gsi/team_infra_datacenter_gsi_presentation.pdf">Hackathon Deck (PDF)</a>
+              <a href="https://github.com/pomigod/research-portfolio/blob/main/02_geospatial_ai_datacenter_gsi/korea_datacenter_gsi_gee.ipynb" target="_blank" rel="noopener">GEE Notebook (.ipynb)</a>
+              <a href="./02_geospatial_ai_datacenter_gsi/regional_micro_siting_cluster_map.png">Cluster Map (PNG)</a>
+              <a href="https://doi.org/10.7840/kics.2025.50.6.847" target="_blank" rel="noopener">Ref DOI (KICS 2025)</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="./03_ml_timeseries_cafeteria_xgboost/actual_vs_predicted_timeseries.png" alt="Actual vs Predicted Cafeteria Meal Demand Time Series" />
+          </div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span class="tag">Time-Series ML</span>
+              <span class="tag">XGBoost</span>
+              <span class="tag">2025-06-19</span>
+            </div>
+            <h3>03. Cafeteria Meal Demand Forecasting &amp; Behavioral Feature Analysis</h3>
+            <div class="ko-title">구내식당 식수 인원 예측 및 데이터 분석</div>
+            <p>
+              Multi-year attendance modeling (2016–2021) achieving Lunch MAE <code>84.49</code> and Dinner MAE <code>45.86</code>. Tree attribution reveals overtime intensity, night shifts, leave count, and remote-work metrics drive variance over menu strings.
+            </p>
+            <div class="links">
+              <a href="./03_ml_timeseries_cafeteria_xgboost/cafeteria_demand_prediction_presentation.pdf">Analysis Deck (26p PDF)</a>
+              <a href="./03_ml_timeseries_cafeteria_xgboost/actual_vs_predicted_timeseries.png">Time-Series Plot</a>
+              <a href="./03_ml_timeseries_cafeteria_xgboost/xgboost_feature_importance.png">Feature Importance</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="./04_vision_swin_dermatology/swin_acne_classifier_gui_demo.png" alt="Swin Transformer Acne Classifier GUI Demo" />
+          </div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span class="tag">Vision Transformer</span>
+              <span class="tag">Dermatology</span>
+              <span class="tag">2025-06-09</span>
+            </div>
+            <h3>04. Swin Transformer 10-Class Acne Lesion Classification</h3>
+            <div class="ko-title">Swin Transformer를 이용한 여드름 이미지 분류</div>
+            <p>
+              Hierarchical shifted-window Swin Transformer model fine-tuned on a 10-class acne dataset and wrapped in an interactive local inference GUI (demonstrating <code>99.16%</code> confidence on blackhead morphology).
+            </p>
+            <div class="links">
+              <a href="https://programmingtrainingkyu.blogspot.com/2025/06/swin-transformer.html" target="_blank" rel="noopener">Research Log (2025-06-09)</a>
+              <a href="./04_vision_swin_dermatology/swin_acne_classifier_gui_demo.png">GUI Screenshot</a>
+              <a href="./04_vision_swin_dermatology/swin_acne_project_gantt_week11_15.png">Gantt Plan</a>
+              <a href="https://github.com/pomigod/research-portfolio/tree/main/04_vision_swin_dermatology" target="_blank" rel="noopener">Folder</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="./05_declarative_ai_video_pipeline_project4/three_second_determinism_bg_shift_graph.png" alt="Three-Second Determinism Background Shift Graph" />
+          </div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span class="tag">Generative Video</span>
+              <span class="tag">Declarative Pipeline</span>
+              <span class="tag">Draw.io XMLs</span>
+            </div>
+            <h3>05. Declarative AI Video Pipelines &amp; Three-Second Determinism</h3>
+            <div class="ko-title">정음 1446 (2025-12-04) &amp; 프로젝트 IV 선언형 AI 영상 제작 파이프라인 (2026-11-30)</div>
+            <p>
+              Replaces drift-prone multi-step Extend loops with standalone 10s synthesis, dual matte character sheets, 0–3s fast-fail visual screening (empirical 0% static-clip recovery after 3s), and lossless FFmpeg 4K concatenation.
+            </p>
+            <div class="links">
+              <a href="./05_declarative_ai_video_pipeline_project4/project4_final_declarative_pipeline_v2.pdf">Project IV v2 (PDF)</a>
+              <a href="./05_declarative_ai_video_pipeline_project4/jeongeum1446_project_progress_19p.pdf">Jeongeum 1446 (19p PDF)</a>
+              <a href="./05_declarative_ai_video_pipeline_project4/project4_end_to_end_workflow.png">Workflow PNG</a>
+              <a href="https://github.com/pomigod/research-portfolio/tree/main/05_declarative_ai_video_pipeline_project4/drawio_pipelines" target="_blank" rel="noopener">5 PNGs &amp; 3 Draw.io XMLs</a>
+              <a href="https://www.youtube.com/@extendedseamless" target="_blank" rel="noopener">YouTube Demos</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="./06_working_papers_complex_systems/skill_popularity_accessibility_luck_venn.png" alt="Skill Popularity Accessibility Luck Venn Diagram" />
+          </div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span class="tag">Working Paper</span>
+              <span class="tag">Ergonomics</span>
+              <span class="tag">Reinforcement Learning</span>
+            </div>
+            <h3>06 &amp; 07. Complex Systems Working Paper, Ergonomics &amp; DeepRacer RL</h3>
+            <div class="ko-title">전진의 착시와 역행적 회귀 (Working Paper) · 인체공학 제품 분석 · 춘천 AWS 딥레이서 본선</div>
+            <p>
+              Includes a 16-page theoretical working paper on backward regression and non-ergodicity, a 13-slide human-factors ergonomics study, and open-source AWS DeepRacer Championship reward-shaping Python scripts.
+            </p>
+            <div class="links">
+              <a href="./06_working_papers_complex_systems/illusion_of_progress_backward_regression_working_paper.pdf">Working Paper (16p PDF)</a>
+              <a href="./07_ergonomics_human_factors/ergonomic_product_analysis_presentation.pdf">Ergonomics Deck (13p PDF)</a>
+              <a href="https://github.com/pomigod/gogod" target="_blank" rel="noopener">AWS DeepRacer Code (gogod)</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="credentials">
+      <h2>Verified Credentials, Distinctions &amp; Education</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Title / Institution</th>
+            <th>Verified Date / Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Education</td>
+            <td><strong>Konyang University (건양대학교)</strong> — B.S. in Artificial Intelligence (Candidate)<br /><span style="color:#475569">Department of Artificial Intelligence · Minor: Medical IT Engineering</span></td>
+            <td><code>2023-03</code> – Present</td>
+          </tr>
+          <tr>
+            <td>Research Role</td>
+            <td><strong>Undergraduate Researcher — Clinical Medical AI Track</strong> (병원인공지능 실무 의료 AI)<br /><span style="color:#475569">VLM-based Ophthalmic &amp; Pulmonary Disease Analysis</span></td>
+            <td><code>2023-03</code> – Present</td>
+          </tr>
+          <tr>
+            <td>Award</td>
+            <td><strong>NAVER Cloud Agentic AI Competition — Encouragement Award (장려상)</strong></td>
+            <td><code>2026-08</code> (40h Academy &amp; Competition)</td>
+          </tr>
+          <tr>
+            <td>Competition</td>
+            <td><strong>2025 Chuncheon AWS DeepRacer Championship — Finalist</strong> (Team <code>역시전략</code>)</td>
+            <td><code>2025-09-28</code> (<a href="https://github.com/pomigod/gogod" target="_blank" rel="noopener">pomigod/gogod</a>)</td>
+          </tr>
+          <tr>
+            <td>Scholarships</td>
+            <td><strong>Yuhan Foundation Scholarship (유한재단 장학금)</strong> &amp; <strong>Konyang Special Merit Scholarship (특별장학금)</strong></td>
+            <td>Fall 2025 (<code>2025/2</code>)</td>
+          </tr>
+          <tr>
+            <td>Qualification</td>
+            <td><strong>Konyang MatchUp Multi-Cloud Admin Specialist (2026 매치업 멀티클라우드 어드민)</strong></td>
+            <td><code>2026-10-27</code> / Suite <code>2026-11-02</code></td>
+          </tr>
+          <tr>
+            <td>Qualification</td>
+            <td><strong>DSC Shared University Mobility Career Portfolio Camp Completion (이수증)</strong></td>
+            <td><code>2026-02-04</code> (<code>DSC-대교혁-2026-00100</code>)</td>
+          </tr>
+          <tr>
+            <td>Certifications</td>
+            <td><strong>NVIDIA DLI Deep Learning Fundamentals</strong> &amp; <strong>Google Gemini Certified University Student</strong></td>
+            <td>Verified records on file</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <div>Jin Hwang (황진) · Konyang University · Daejeon, Republic of Korea</div>
+      <div>
+        <a href="https://orcid.org/0009-0007-4269-0168" target="_blank" rel="noopener">ORCID</a> ·
+        <a href="https://github.com/pomigod/research-portfolio" target="_blank" rel="noopener">GitHub Repo</a> ·
+        <a href="https://github.com/pomigod/gogod" target="_blank" rel="noopener">DeepRacer Repo</a> ·
+        <a href="https://www.youtube.com/@extendedseamless" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
